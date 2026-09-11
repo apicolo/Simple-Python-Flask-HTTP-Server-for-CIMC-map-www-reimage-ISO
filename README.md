@@ -23,6 +23,8 @@ Server username: <enter>
 Server password: <enter>
 ```
 
+You cannot run this script from within APICs or Nexus Dashboard servers.
+
 ## How to run it:
 
 ```python cimc_http_server_v2.py```
