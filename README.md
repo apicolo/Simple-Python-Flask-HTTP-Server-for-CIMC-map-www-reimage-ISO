@@ -14,6 +14,15 @@ It was created to be a simple/lightweight HTTP server to reimage APICs/Nexus Das
 
 A folder named "iso_share" will be created in same folder where this script in run, all ISOs or any other files served by HTTP server should be placed inside this folder.
 
+No username/password is required when mounting ISO files served by this HTTP server, just hit ```<enter>/<enter>``` when asked by CIMC:
+
+```
+system# scope vmedia
+system /vmedia # map-www volume_name http://http_server_ip_and_path iso_file_name
+Server username: <enter>
+Server password: <enter>
+```
+
 ## How to run it:
 
 ```python cimc_http_server_v2.py```
