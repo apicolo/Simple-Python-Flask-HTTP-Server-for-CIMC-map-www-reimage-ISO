@@ -14,25 +14,6 @@ It was created to be a simple/lightweight HTTP server to reimage APICs/Nexus Das
 
 You can select any folder to be served by this HTTP server with option "-d", if you don't a folder named "iso" will be created in same folder where this script in run, all ISOs or any other files served by HTTP server should be placed inside this folder.
 
-No username/password is required when mounting ISO files served by this HTTP server, just hit ```<enter>/<enter>``` when asked by CIMC:
-
-```
-system# scope vmedia
-system /vmedia # map-www volume_name http://http_server_ip_and_path iso_file_name
-Server username: <enter>
-Server password: <enter>
-```
-
-You cannot run this script from within APICs or Nexus Dashboard servers.
-
-## How to run it:
-
-```python cimc_http_server_v3.py```
-
-or
-
-```python cimc_http_server_v3.py [-h] [-p PORT] [-d DIR]```
-
 ### Command-Line Arguments
 
 | Parameter | Short Flag | Long Flag | Description | Default |
@@ -66,6 +47,21 @@ python cimc_http_server_v3.py --port 80 --dir C:\ISO_Store
 ```
 
 ---
+
+No username/password is required when mounting ISO files served by this HTTP server, just hit ```<enter>/<enter>``` when asked by CIMC:
+
+```
+system# scope vmedia
+system /vmedia # map-www volume_name http://http_server_ip_and_path iso_file_name
+Server username: <enter>
+Server password: <enter>
+```
+
+You cannot run this script from within APICs or Nexus Dashboard servers.
+
+
+## Steps to Re-Image APIC Controller via HTTP Server
+https://www.cisco.com/c/en/us/support/docs/cloud-systems-management/application-policy-infrastructure-controller-apic/222040-steps-to-re-image-apic-controller-via-ht.html
 
 ## Procedure for Re-Imaging Cisco Nexus Dashboard Nodes Using an HTTP Server
 https://www.cisco.com/c/en/us/support/docs/cloud-systems-management/application-policy-infrastructure-controller-apic/224568-procedure-for-re-imaging-cisco-nexus.html
