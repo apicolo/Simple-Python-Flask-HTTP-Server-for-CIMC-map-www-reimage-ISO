@@ -32,3 +32,7 @@ You cannot run this script from within APICs or Nexus Dashboard servers.
   or
 
 ```python3 cimc_http_server_v2.py```
+
+## Procedure for Re-Imaging Cisco Nexus Dashboard Nodes Using an HTTP Server
+https://www.cisco.com/c/en/us/support/docs/cloud-systems-management/application-policy-infrastructure-controller-apic/224568-procedure-for-re-imaging-cisco-nexus.html
+
