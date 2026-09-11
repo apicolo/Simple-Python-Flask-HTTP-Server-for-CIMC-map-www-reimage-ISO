@@ -27,11 +27,11 @@ You cannot run this script from within APICs or Nexus Dashboard servers.
 
 ## How to run it:
 
-```python cimc_http_server_v2.py```
+```python cimc_http_server_v3.py```
 
 or
 
-```python cimc_http_server_v2.py [-h] [-p PORT] [-d DIR]```
+```python cimc_http_server_v3.py [-h] [-p PORT] [-d DIR]```
 
 ### Command-Line Arguments
 
@@ -47,22 +47,22 @@ or
 
 ### 1. View Help Menu
 ```bash
-python cimc_http_server_v2.py -h
+python cimc_http_server_v3.py -h
 ```
 
 ### 2. Run with Defaults (Port 80, `./iso` Directory)
 ```bash
-python cimc_http_server_v2.py
+python cimc_http_server_v3.py
 ```
 
 ### 3. Specify Custom Port and Custom Directory
 ```bash
-python cimc_http_server_v2.py -p 9000 -d /var/www/iso_images
+python cimc_http_server_v3.py -p 9000 -d /var/www/iso_images
 ```
 
 ### 4. Running on Windows
 ```cmd
-python cimc_http_server_v2.py --port 80 --dir C:\ISO_Store
+python cimc_http_server_v3.py --port 80 --dir C:\ISO_Store
 ```
 
 ---
