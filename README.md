@@ -12,7 +12,7 @@ It was created to be a simple/lightweight HTTP server to reimage APICs/Nexus Das
 
 ## How to use it?
 
-A folder named "iso" will be created in same folder where this script in run, all ISOs or any other files served by HTTP server should be placed inside this folder.
+You can select any folder to be served by this HTTP server with option "-d", if you don't a folder named "iso" will be created in same folder where this script in run, all ISOs or any other files served by HTTP server should be placed inside this folder.
 
 No username/password is required when mounting ISO files served by this HTTP server, just hit ```<enter>/<enter>``` when asked by CIMC:
 
