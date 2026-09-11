@@ -4,7 +4,7 @@ from flask import Flask, send_from_directory, request, Response, render_template
 app = Flask(__name__)
 SHARE_DIR = os.path.abspath("./iso_share")
 
-# Modelo de página HTML simples para listar os arquivos no navegador
+# Simple HTML page template for listing files in the browser.
 HTML_TEMPLATE = """
 <!DOCTYPE html>
 <html>
@@ -22,7 +22,7 @@ HTML_TEMPLATE = """
     </style>
 </head>
 <body>
-    <h2>📁 Arquivos Disponíveis para o Cisco CIMC (map-www)</h2>
+    <h2>📁 Files Available for Cisco CIMC (map-www)</h2>
     {% if files %}
         <ul>
         {% for file in files %}
@@ -33,7 +33,7 @@ HTML_TEMPLATE = """
         {% endfor %}
         </ul>
     {% else %}
-        <p class="empty">Nenhum arquivo encontrado na pasta 'iso_share'. Coloque suas ISOs lá dentro!</p>
+        <p class="empty">No files were found in the 'iso_share' folder. Place your ISOs there!</p>
     {% endif %}
 </body>
 </html>
@@ -41,7 +41,7 @@ HTML_TEMPLATE = """
 
 @app.route('/', methods=['GET'])
 def list_files():
-    """Lista todos os arquivos dentro da pasta iso_share quando acessar a raiz '/'"""
+    """Lists all files within the iso_share folder when accessing the root directory. '/'"""
     files_list = []
     if os.path.exists(SHARE_DIR):
         for filename in os.listdir(SHARE_DIR):
@@ -56,30 +56,30 @@ def list_files():
 def serve_iso(filename):
     file_path = os.path.join(SHARE_DIR, filename)
     
-    # 1. Trata arquivo inexistente
+    # 1. Treats a non-existent file.
     if not os.path.exists(file_path) or not os.path.isfile(file_path):
-        print(f"[ERRO] Arquivo solicitado nao existe: {filename}")
-        return "Arquivo Nao Encontrado", 404
+        print(f"[ERROR] The requested file does not exist: {filename}")
+        return "File not found", 404
 
     file_size = os.path.getsize(file_path)
 
-    # 2. Trata a requisição HEAD do CIMC (Checagem de tamanho e disponibilidade)
+    # 2. Handles the CIMC HEAD request (Size and Availability Check)
     if request.method == 'HEAD':
-        print(f"[INFO] CIMC enviou checagem HEAD para: {filename}")
+        print(f"[INFO] CIMC sent HEAD check to: {filename}")
         response = Response(status=200)
         response.headers['Content-Type'] = 'application/octet-stream'
         response.headers['Content-Length'] = file_size
         response.headers['Accept-Ranges'] = 'bytes'
         return response
 
-    # 3. Trata a requisição GET do CIMC / Navegador (Download/Streaming da ISO)
-    print(f"[INFO] Iniciou o streaming de: {filename} ({file_size / (1024**3):.2f} GB)")
+    # 3. Handles the GET request from CIMC / Browser (ISO Download/Streaming)
+    print(f"[INFO] Streaming of file has started: {filename} ({file_size / (1024**3):.2f} GB)")
     return send_from_directory(SHARE_DIR, filename, as_attachment=True)
 
 if __name__ == '__main__':
     if not os.path.exists(SHARE_DIR):
         os.makedirs(SHARE_DIR)
-        print(f"[INIT] Pasta '{SHARE_DIR}' criada. Coloque suas ISOs dentro dela.")
+        print(f"[INIT] Folder '{SHARE_DIR}' created. Place your ISOs inside it.")
 
-    print("[STATUS] Iniciando servidor HTTP na porta 80...")
+    print("[STATUS] Starting HTTP server on port 80...")
     app.run(host='0.0.0.0', port=80, debug=False)
