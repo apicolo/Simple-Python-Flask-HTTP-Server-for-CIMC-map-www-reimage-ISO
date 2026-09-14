@@ -24,7 +24,7 @@ You can select any folder to be served by this HTTP server with option "-d", if 
 | **Port** | `-p` | `--port` | HTTP port for the server to listen on | `80` |
 | **Directory** | `-d` | `--dir` | Local path containing ISO image files | `./iso` |
 
-For A CIMC-HTTP-Server.exe, simply copy it to Windows and run it.
+For executable CIMC-HTTP-Server.exe, simply copy it to Windows and run it. A GUI will open asking for folder and ports.
 
 ---
 
