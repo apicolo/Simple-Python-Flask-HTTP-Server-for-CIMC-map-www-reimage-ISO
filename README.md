@@ -4,7 +4,7 @@
   - Python 3.6+  ```pip install python```
   - flask   ```pip install flask```
 
-A CIMC-HTTP-Server.exe was created for Windows OS with a GUI, so HTTP server can be used without installing python or flask.
+A CIMC-HTTP-Server.exe was created for Windows OS with a GUI, so HTTP server can be used without installing python or flask. (Thanks to Thiago Hubes for that)
 
 ## What this script does?
 
