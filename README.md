@@ -1,8 +1,10 @@
-# Simple-Python-Flask-HTTP-Server-for-CIMC-map-www-reimage-ISO
+# Simple-Python-Flask-HTTP-Server-for-CIMC-map-www-reimage-ISO + CIMC-HTTP-Server.exe
 
 ## Dependencies:
   - Python 3.6+  ```pip install python```
   - flask   ```pip install flask```
+
+A CIMC-HTTP-Server.exe was created for Windows OS with a GUI, so HTTP server can be used without installing python or flask.
 
 ## What this script does?
 
@@ -21,6 +23,8 @@ You can select any folder to be served by this HTTP server with option "-d", if 
 | **Help** | `-h` | `--help` | Show help message and exit | — |
 | **Port** | `-p` | `--port` | HTTP port for the server to listen on | `80` |
 | **Directory** | `-d` | `--dir` | Local path containing ISO image files | `./iso` |
+
+For A CIMC-HTTP-Server.exe, simply copy it to Windows and run it.
 
 ---
 
